@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+.card {
+  background: rgba(255,255,255,0.15);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 400px;
+  animation: fadeIn 2s;
+}
+button {
+  background: #fff;
+  color: #ff5e78;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <h1>Hey Love 💖</h1>
+  <p>I made this just for you.</p>
+  <button onclick="reveal()">Tap me 💌</button>
+  <p id="letter" class="hidden">
+    Every day with you feels like magic.<br>
+    Your smile is my favorite place to be.<br>
+    My heart chooses you — always ❤️
+  </p>
+</div>
+
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function reveal() {
+  document.getElementById("letter").classList.remove("hidden");
+}
+</script>
+</body>
+</html>
