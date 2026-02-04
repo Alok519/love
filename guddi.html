@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff4e8a, #ff9a9e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 35px;
+  border-radius: 25px;
+  max-width: 420px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 30px rgba(255, 0, 100, 0.5);
+  animation: popIn 1.5s ease;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+button {
+  margin-top: 20px;
+  background: #fff;
+  color: #ff2f6d;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  color: rgba(255,255,255,0.8);
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>💖 Happy Valentine’s Day 💖</h1>
+  <h2>Guddi 💕</h2>
+  <p>I made this just for you.</p>
+
+  <button onclick="showLove()">Tap here ❤️</button>
+
+  <div id="loveText" class="hidden">
+    খুব তাড়াতাড়ি আমরা বিয়ের পিঁড়িতে বসতে চলেছি,<br>
+    হ্যাপি ভ্যালেন্টাইন্স ডে,<br>
+    আমি তোমাকে খুব ভালোবাসি পুচু 💞
+  </div>
+</div>
+
+<!-- Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showLove() {
+  document.getElementById("loveText").classList.remove("hidden");
+}
+
+// Create floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (16 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}, 400);
+</script>
+
+</body>
+</html>
